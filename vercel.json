@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/:match*",
+      "destination": "https://zs-bezno.cz/:match*"
+    }
+  ]
+}
