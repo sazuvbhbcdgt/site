@@ -1,9 +1,12 @@
 {
   "rewrites": [
-    { "source": "/*(.*)", "destination": "https://zs-bezno.cz/" },
     {
       "source": "/:match*",
       "destination": "https://zs-bezno.cz/:match*"
     }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "status": 308, "dest": "https://zs-bezno.cz/" }
   ]
 }
