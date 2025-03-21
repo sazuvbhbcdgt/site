@@ -3,10 +3,10 @@
     {
       "source": "/:match*",
       "destination": "https://zs-bezno.cz/:match*"
+    },
+    {
+      "source": "/",
+      "destination": "https://zs-bezno.cz/"
     }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "status": 308, "dest": "https://zs-bezno.cz/" }
   ]
 }
