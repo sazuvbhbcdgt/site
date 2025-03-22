@@ -3,140 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake URL Spoofing Demo</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        .fake-bar {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 35px;
-            background: white;
-            color: black;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 5px;
-            border-bottom: 2px solid gray;
-            z-index: 9999;
-            text-align: left;
-            padding-left: 10px;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="fakeBar" class="fake-bar">🔒 https://www.paypal.com</div>
-
-    <h1>🚨 URL Spoofing Demo 🚨</h1>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    <p>Scroll down or click below to simulate phishing.</p>
-    
-
-    <button onclick="spoofURL()">Spoof URL</button>
-
+    <title>URL Spoofing Example</title>
     <script>
         function spoofURL() {
-            // Change address bar (pushState)
-            history.pushState({}, "", "https://www.paypal.com");
-            alert("🔒 Notice: The URL has changed but you are NOT on PayPal!");
+            // Create a new iframe
+            var iframe = document.createElement('iframe');
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframe.src = 'https://example.com'; // The actual URL the iframe will load
+
+            // Append the iframe to the body
+            document.body.appendChild(iframe);
+
+            // Use JavaScript to manipulate the address bar (this is a simplified example)
+            // Note: Modern browsers have security measures to prevent this
+            history.pushState({}, '', 'https://fake-example.com'); // The fake URL displayed in the address bar
         }
-
-        // Fake Mobile Browser Address Bar
-        window.onscroll = function() {
-            if (window.scrollY > 50) {
-                document.getElementById("fakeBar").style.display = "block";
-            } else {
-                document.getElementById("fakeBar").style.display = "none";
-            }
-        };
     </script>
-
+</head>
+<body onload="spoofURL()">
+    <h1>URL Spoofing Example</h1>
+    <p>This page demonstrates URL spoofing in the address bar.</p>
 </body>
 </html>
