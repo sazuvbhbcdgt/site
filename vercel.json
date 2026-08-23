@@ -7,6 +7,9 @@
     {
       "source": "/",
       "destination": "https://zs-bezno.cz/"
-    }
+    },
+    { 
+      "source": "/proxy/:myxc*",
+      "destination": ":myxc*"
   ]
 }
