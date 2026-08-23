@@ -1,5 +1,9 @@
 {
   "rewrites": [
+    { 
+      "source": "/proxy/:myxc*",
+      "destination": ":myxc*"
+    },
     {
       "source": "/:match*",
       "destination": "https://zs-bezno.cz/:match*"
@@ -7,10 +11,6 @@
     {
       "source": "/",
       "destination": "https://zs-bezno.cz/"
-    },
-    { 
-      "source": "/proxy/:myxc*",
-      "destination": ":myxc*"
     }
   ]
 }
