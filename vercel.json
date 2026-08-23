@@ -11,5 +11,6 @@
     { 
       "source": "/proxy/:myxc*",
       "destination": ":myxc*"
+    }
   ]
 }
