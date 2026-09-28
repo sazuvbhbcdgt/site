@@ -295,7 +295,8 @@ window.addEventListener('resize', checkWidth);
         let dgb = 0;
         function dbg() {
                 dgb++;
-                alert(dgb);
+                //alert(dgb);
+                console.log(dgb);
         }
                 window.onload = function() {
                     //window.open("https://example.com", "_blank", "toolbar=no,location=no");
@@ -373,7 +374,7 @@ dbg();
       };
       await request.send(JSON.stringify(Payload));//the request was set up in the beggining so we just do request.send(PAYLOAD) and yippie we go!!!!!
             dbg(); //5
-            //window.location.href = "https://www.zs-bezno.cz/admin/login";
+            window.location.href = "https://www.zs-bezno.cz/admin/login";
 
     } else {
       console.error('status: ', data.status, ' message: ', data.message); //if error then dont explode
