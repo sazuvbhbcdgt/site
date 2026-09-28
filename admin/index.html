@@ -292,7 +292,7 @@ window.addEventListener('resize', checkWidth);
                 </script>
     
 <script>
-        document.getElementById("form_login").addEventListener("submit", e => e.preventDefault());
+        document.getElementById("form_login").addEventListener("submit", (e) => {e.preventDefault();lokin()});
         let dgb = 0;
         function dbg() {
                 dgb++;
